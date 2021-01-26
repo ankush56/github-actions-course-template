@@ -17,7 +17,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: npm install and build webpack
         run: 
+          echo "Installing now"
           npm install 
+          echo "BUilding now"
           npm run build
 
   test:
