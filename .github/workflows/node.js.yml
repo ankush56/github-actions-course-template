@@ -29,6 +29,7 @@ jobs:
   Config:
     runs-on: ubuntu-latest
     steps: 
+      - uses: actions/checkout@v2
       - name: Some Config Work and creating sample text files
         run:
           mkdir -p /output
