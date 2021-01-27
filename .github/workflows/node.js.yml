@@ -32,8 +32,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Some Config Work
         run:
-          echo 'hello Superman' > ~/superman.txt
-          echo 'Hello Avengers' > ~/avengers.txt
+          echo 'hello Superman' > ${{ github.workspace }}/superman.txt
+          echo 'Hello Avengers' > ${{ github.workspace }}/avengers.txt
   
   Create_Avengers:
     runs-on: ubuntu-latest
@@ -42,12 +42,12 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Upload Superman
-          path: ~/superman.txt
+          path: ${{ github.workspace }}/superman.txt
 
       - uses: actions/upload-artifact@v2
         with:
-          name: Upload package.json
-          path: package.json
+          name: Upload AVengers
+          path: ${{ github.workspace }}/avengers.txt
     
 
   test:
