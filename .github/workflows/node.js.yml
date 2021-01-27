@@ -34,6 +34,7 @@ jobs:
         run:
           echo "hello Superman" >> superman.txt
           echo "Hello Avengers" >> avengers.txt
+          cp superman.txt public/
 
   test:
     runs-on: ubuntu-latest
