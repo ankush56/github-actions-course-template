@@ -25,7 +25,15 @@ jobs:
         with:
           name: webpack artifact
           path: public/
-
+  
+  config:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Some Config Work
+        run:
+          echo "hello Superman" >> superman.txt
+          echo "Hello Avengers" >> avengers.txt
 
   test:
     runs-on: ubuntu-latest
