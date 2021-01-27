@@ -32,8 +32,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Some Config Work
         run:
-          echo 'hello Superman' > superman.txt
-          echo 'Hello Avengers' > avengers.txt
+          echo 'hello Superman' > ~/superman.txt
+          echo 'Hello Avengers' > ~/avengers.txt
   
   Create_Avengers:
     runs-on: ubuntu-latest
@@ -42,13 +42,12 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Upload Superman
-          path: superman.txt
+          path: ~/superman.txt
 
       - uses: actions/upload-artifact@v2
         with:
-          name: Upload Avengers
-          path: avengers.txt
-
+          name: Upload package.json
+          path: package.json
     
 
   test:
