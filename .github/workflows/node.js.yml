@@ -33,8 +33,6 @@ jobs:
       - name: Some Config Work
         run:
           mkdir -p ~/output
-          touch public/superman.txt
-          touch public/avengers.txt
           echo "hello Superman" >> public/superman.txt
           echo "Hello Avengers" >> public/avengers.txt
   
