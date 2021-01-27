@@ -42,12 +42,12 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Upload Superman
-          path: ${{ github.workspace }}/superman.txt
+          path: ${{ github.workspace }}
 
       - uses: actions/upload-artifact@v2
         with:
           name: Upload AVengers
-          path: ${{ github.workspace }}/avengers.txt
+          path: ${{ github.workspace }}
     
 
   test:
