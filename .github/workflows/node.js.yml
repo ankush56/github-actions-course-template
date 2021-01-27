@@ -26,15 +26,23 @@ jobs:
           name: webpack artifact
           path: public/
   
-  config:
+  Config:
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
-      - name: Some Config Work
+      - name: Some Config Work and creating sample text files
         run:
-          echo "hello Superman" >> superman.txt
-          echo "Hello Avengers" >> avengers.txt
-          cp superman.txt public/
+          mkdir -p /output
+          echo "hello Superman" >> /output/superman.txt
+          echo "Hello Avengers" >> output/avengers.txt
+  
+  Create_Avengers:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Create Avengers
+          path: /output
+    
 
   test:
     runs-on: ubuntu-latest
